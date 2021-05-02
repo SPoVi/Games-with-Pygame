@@ -20,26 +20,36 @@ pygame.display.set_caption('Codigo 2: Tarea Periodica.')
 
 # Variables cosntantes de la tareas
 y1 = 10
+x1 = 10
 sep = 10
 # Donde empieza el cuadrado
-tarea1X = 0
-tarea1Y = WIN_HEIGHT / 2
+tareaX = 0
+tareaY = WIN_HEIGHT / 2
 
 
 surface.fill((0,0,0)) # Fondo negro
 
 # PEDIR DATOS
-print("Duracion de la tarea?: ")
-tarea1_Duration = int(input())
+print("Periodo de la tarea: ")
+periodo = int(input())
+print("Tiempo de computo de la tarea (tiempo max de ejecución): ")
+computo = int(input())
 
+
+cont = 0
 
 # loop infinito
 while True:
 
-    #(ventana, color, x0, y0, x1, y1)
-    # Mediante la diferencia entre x1-x0 se determina la duracion de la tarea.
-    pygame.draw.rect(surface,(255,255,255),(tarea1X,tarea1Y, tarea1_Duration, y1)) # Duracion
-    tarea1X += tarea1_Duration + sep  # Periodo. Cuando aparece el proximo cuadrado
+    #Param del rect: (ventana, color, x0, y0, x1, y1)
+    if cont < computo:
+        pygame.draw.rect(surface, (255, 255, 255), (tareaX, tareaY, x1, y1))  # Duracion (blanco)
+        tareaX+= 10
+        cont+= 1
+    elif cont == computo:
+        pygame.draw.rect(surface, (0, 0, 0), (tareaX, tareaY, x1, y1))  # Espacio (negro)
+        tareaX += 10
+        cont = 0
 
     for event in GAME_EVENTS.get():
         if event.type == GAME_GLOBALS.QUIT:
