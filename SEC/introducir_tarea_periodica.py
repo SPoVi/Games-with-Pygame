@@ -36,7 +36,7 @@ for i in range(0,numTareas):
     # PEDIR DATOS
     print(f"Periodo de la tarea {i+1}: ")
     periodo = int(input())
-    print(f"Tiempo de computo de la tarea (tiempo max de ejecución) {i}: ")
+    print(f"Tiempo de computo de la tarea (tiempo max de ejecución) {i+1}: ")
     computo = int(input())
 
     lista_periodo.append(periodo)
