@@ -10,6 +10,9 @@ Añadir una segunda tarea que se visualize debajo de la primera.
 Su duracion de ejecucion sera el doble de la primera y las separacion sera de 1s
 igual que en con la tarea anterior.
 
+PASO 3:
+Introducir datos por teclado
+
 '''
 
 import pygame, sys
@@ -33,7 +36,10 @@ sep = 10
     # Donde empieza el cuadrado
 tarea1X = 0
 tarea1Y = WIN_HEIGHT / 2
-tarea1_D= 10
+#tarea1_D= 10
+
+print("Introduce la duracion de la tarea1 : (10s)")
+tarea1_D = int(input())
 
 tarea2X = 0
 tarea2Y = WIN_HEIGHT / 2 + 20
@@ -42,6 +48,7 @@ tarea2_D = 30 # 3s
 surface.fill((0,0,0)) # Fondo negro
 
 count = 0
+
 
 while True:
 
